@@ -6,8 +6,11 @@ void intro_draw(){
 
   text("Happy Feet", width/2-30, 30);
   textSize(20);
-  text("MODES", width/2-30, 70);
-  BaselineMode.moveTo(width/2-70, 90);  
-  FeetMapMode.moveTo(width/2-70, 160);  
-  CreativeMode.moveTo(width/2-70, 230);
+  text("MODES", 50, 70);
+  BaselineMode.moveTo(20, 90);  
+  FeetMapMode.moveTo(20, 160);  
+  CreativeMode.moveTo(20, 230);
+  
+  //section section of the screen for gyro data
+  userp.draw();
 }
