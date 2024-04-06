@@ -1,5 +1,8 @@
 long interval = 2000;
 long start= 0;
+ArrayList<int []> baseline_data= new ArrayList();
+int max_threshold=800;
+int min_threshold= 400;
 void baseline_draw(){
   pushStyle();
   background(255);
@@ -16,8 +19,19 @@ void baseline_draw(){
   }
   else{
     start=millis();
+    process_baselineData();
     tab= "baselinedata";
   }
   popStyle();
+  
+}
+void process_baselineData(){
+  
+  ArrayList<int []> temp = (ArrayList<int []>)baseline_data.clone();
+  baseline_data.clear();
+  
+  //for (var i: temp){
+  //  for ()
+  //}
   
 }

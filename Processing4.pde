@@ -72,14 +72,22 @@ void draw(){
   
 }
 void serialEvent(Serial myPort){
+  
   String tempval = myPort.readStringUntil('\n');
   tempval= tempval.trim();
+  int fpval[]= {0, 0, 0, 0}; 
   if (Pattern.matches("*, *, *, *",tempval)){//fsr values are being sent in 
     String arr []= tempval.split(",", 4);
     for (int i=0; i<4; i++){
       fps.get(i).setValue(Integer.parseInt(arr[i]));
+      fpval[i]= Integer.parseInt(arr[i]);
     }
+    
     //use for other purpose
+    if(tab=="baseline"){
+      baseline_data.add(fpval);
+    }
+    
   }
   else if (Pattern.matches("*, *, *, *, *, *", tempval)){//gyroscope values are being sent in
     //String arr[]= tempval.split(",", 6);
